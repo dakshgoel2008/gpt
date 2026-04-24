@@ -20,10 +20,9 @@ class Solution:
         initial_weights: NDArray[np.float64]
     ) -> NDArray[np.float64]:
         # For each iteration:
-        #   1. Compute predictions with get_model_prediction(X, weights)
-        #   2. For each weight index j, compute gradient with get_derivative()
-        #   3. Update: weights[j] -= learning_rate * gradient
-        # Return np.round(final_weights, 5)
+        #   1. predictions = get_model_prediction(X, weights)
+        #   2. For each weight index j, gradient = get_derivative()
+        #   3. weights[j] -= learning_rate * gradient
         for _ in range(num_iterations):
             y_hat = self.get_model_prediction(X, initial_weights)
             for j in range(len(initial_weights)):
